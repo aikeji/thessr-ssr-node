@@ -247,7 +247,7 @@ num=$1
 if [ "${num}" == "1" ]; then
     install_node
 else
-    stty erase '^H' && read -p " 请输入数字 [1-2]:" num
+    stty erase '^H' && read -p "Please press enter" num
 		case "$num" in
 		*)
 		install_node
