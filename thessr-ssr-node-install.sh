@@ -168,6 +168,7 @@ install_node(){
 	#Check Root
 	[ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
 	#Install bbr
+	read -p "Please input your Node_ID(like:1): " UserNODE_ID
 	echo "Start BBR installation..."
 	install_bbr
 	#check OS version
@@ -200,7 +201,6 @@ install_node(){
 	sed -i '$a * hard nofile 512000\n* soft nofile 512000' /etc/security/limits.conf
 	Userdomain="https://thessr.tk"
 	Usermukey="Zjyzjy2003"
-	read -p "Please input your Node_ID(like:1): " UserNODE_ID
 	install_ssr_for_each
 	cd /shadowsocks
 	echo -e "modify Config.py...\n"
