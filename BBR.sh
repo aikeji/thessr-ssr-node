@@ -225,7 +225,6 @@ install_bbr() {
 
     install_config
     sysctl_config
-    reboot_os
 }
 
 
