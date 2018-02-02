@@ -1,6 +1,10 @@
 #!/bin/bash
 #Check Root
 [ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
+install_bbr(){
+	wget --no-check-certificate https://raw.githubusercontent.com/ZJY2003/thessr-ssr-node/master/BBR.sh
+	bash BBR.sh
+}
 Libtest(){
 	#自动选择下载节点
 	GIT='raw.githubusercontent.com'
@@ -163,6 +167,9 @@ install_node(){
 	echo
 	#Check Root
 	[ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
+	#Install bbr
+	echo "Start BBR installation..."
+	install_bbr
 	#check OS version
 	check_sys(){
 		if [[ -f /etc/redhat-release ]]; then
